@@ -7,13 +7,13 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-bot = telebot.TeleBot('YOUR TOKEN') # makan token shoma
+bot = telebot.TeleBot('265444835:AAFquiXHdeB_A4CmHiBSLFTmYUYVw3fnKPE') # makan token shoma
 
 @bot.message_handler(commands=['start', 'help'])
 def m(m):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton('Inline Mode', switch_inline_query='taylor-team'))
-    bot.send_message(m.chat.id, 'Hi Welcome Github bot\ncommands : \n/git [username]\n\ncreated By Taylor Team \ndeveloper : @negative_officiall', reply_markup=markup)
+    bot.send_message(m.chat.id, 'Hi Welcome Github search bot\ncommands : \n/git [username]\n\ncreated By Amirreza Ebrahimi \ndeveloper : @amrrezaebrahimi', reply_markup=markup)
     print 'bot send help command'
 
 @bot.message_handler(regexp='^(/git) (.*)')
@@ -35,7 +35,7 @@ def gif(m):
         avatar_url = json_data['avatar_url']
         urllib.urlretrieve("{}".format(avatar_url), "git.png")
         bot.send_sticker(m.chat.id, open('git.png'))
-        bot.send_message(m.chat.id, 'Name : <b>{}</b>\nType : <b>{}</b>\nCompany : <b>{}</b>\nblog : <code>{}</code>\nlocation : <b>{}</b>\nbio : <i>{}</i>\n\nUrl : <code>{}</code>\nfollowers : <code>{}</code>\nfollowing : <code>{}</code>\nRepos : <code>{}</code>\n\xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \n@taylor_team'.format(name,typee,company,blog,location,bio,url_html,followers,following,public_repos), parse_mode='HTML')
+        bot.send_message(m.chat.id, 'Name : <b>{}</b>\nType : <b>{}</b>\nCompany : <b>{}</b>\nblog : <code>{}</code>\nlocation : <b>{}</b>\nbio : <i>{}</i>\n\nUrl : <code>{}</code>\nfollowers : <code>{}</code>\nfollowing : <code>{}</code>\nRepos : <code>{}</code>\n\xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \xE2\x97\xBB \xE2\x97\xBC \n@GitSearchBot'.format(name,typee,company,blog,location,bio,url_html,followers,following,public_repos), parse_mode='HTML')
         print 'bot send git command'
     if 'message' in json_data:
         bot.send_message(m.chat.id, 'Error \n/git [username]')
